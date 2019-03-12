@@ -78,11 +78,11 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
       _thriftId = thriftId;
       _fieldName = fieldName;
     }
-
+@Override
     public short getThriftFieldId() {
       return _thriftId;
     }
-
+@Override
     public String getFieldName() {
       return _fieldName;
     }
@@ -120,7 +120,7 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
     this.age = other.age;
     this.married = other.married;
   }
-
+@Override
   public Person deepCopy() {
     return new Person(this);
   }
@@ -204,7 +204,7 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   public void setMarriedIsSet(boolean value) {
     __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __MARRIED_ISSET_ID, value);
   }
-
+@Override
   public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case USERNAME:
@@ -235,6 +235,7 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
+  @Override
   public Object getFieldValue(_Fields field) {
     switch (field) {
     case USERNAME:
@@ -251,6 +252,7 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+  @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
       throw new IllegalArgumentException();
@@ -270,43 +272,43 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   @Override
   public boolean equals(Object that) {
     if (that == null)
-      return false;
+    {return false;}
     if (that instanceof Person)
-      return this.equals((Person)that);
+    {return this.equals((Person)that);}
     return false;
   }
 
   public boolean equals(Person that) {
     if (that == null)
-      return false;
+    {return false;}
     if (this == that)
-      return true;
+    {return true;}
 
     boolean this_present_username = true && this.isSetUsername();
     boolean that_present_username = true && that.isSetUsername();
     if (this_present_username || that_present_username) {
       if (!(this_present_username && that_present_username))
-        return false;
+      { return false;}
       if (!this.username.equals(that.username))
-        return false;
+      {return false;}
     }
 
     boolean this_present_age = true && this.isSetAge();
     boolean that_present_age = true && that.isSetAge();
     if (this_present_age || that_present_age) {
       if (!(this_present_age && that_present_age))
-        return false;
+      {return false;}
       if (this.age != that.age)
-        return false;
+      { return false;}
     }
 
     boolean this_present_married = true && this.isSetMarried();
     boolean that_present_married = true && that.isSetMarried();
     if (this_present_married || that_present_married) {
       if (!(this_present_married && that_present_married))
-        return false;
+      {return false;}
       if (this.married != that.married)
-        return false;
+      { return false;}
     }
 
     return true;
@@ -318,15 +320,15 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
 
     hashCode = hashCode * 8191 + ((isSetUsername()) ? 131071 : 524287);
     if (isSetUsername())
-      hashCode = hashCode * 8191 + username.hashCode();
+    { hashCode = hashCode * 8191 + username.hashCode();}
 
     hashCode = hashCode * 8191 + ((isSetAge()) ? 131071 : 524287);
     if (isSetAge())
-      hashCode = hashCode * 8191 + age;
+    {hashCode = hashCode * 8191 + age;}
 
     hashCode = hashCode * 8191 + ((isSetMarried()) ? 131071 : 524287);
     if (isSetMarried())
-      hashCode = hashCode * 8191 + ((married) ? 131071 : 524287);
+    {hashCode = hashCode * 8191 + ((married) ? 131071 : 524287);}
 
     return hashCode;
   }
@@ -373,14 +375,15 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   }
 
   @org.apache.thrift.annotation.Nullable
+  @Override
   public _Fields fieldForId(int fieldId) {
     return _Fields.findByThriftId(fieldId);
   }
-
+@Override
   public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
     scheme(iprot).read(iprot, this);
   }
-
+@Override
   public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     scheme(oprot).write(oprot, this);
   }
@@ -400,13 +403,13 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
       first = false;
     }
     if (isSetAge()) {
-      if (!first) sb.append(", ");
+      if (!first) {sb.append(", ");}
       sb.append("age:");
       sb.append(this.age);
       first = false;
     }
     if (isSetMarried()) {
-      if (!first) sb.append(", ");
+      if (!first) {sb.append(", ");}
       sb.append("married:");
       sb.append(this.married);
       first = false;
@@ -439,13 +442,14 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   }
 
   private static class PersonStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+    @Override
     public PersonStandardScheme getScheme() {
       return new PersonStandardScheme();
     }
   }
 
   private static class PersonStandardScheme extends org.apache.thrift.scheme.StandardScheme<Person> {
-
+@Override
     public void read(org.apache.thrift.protocol.TProtocol iprot, Person struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TField schemeField;
       iprot.readStructBegin();
@@ -490,7 +494,7 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
       // check for required fields of primitive type, which can't be checked in the validate method
       struct.validate();
     }
-
+@Override
     public void write(org.apache.thrift.protocol.TProtocol oprot, Person struct) throws org.apache.thrift.TException {
       struct.validate();
 
@@ -519,6 +523,7 @@ public class Person implements org.apache.thrift.TBase<Person, Person._Fields>, 
   }
 
   private static class PersonTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+    @Override
     public PersonTupleScheme getScheme() {
       return new PersonTupleScheme();
     }

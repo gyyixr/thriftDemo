@@ -120,11 +120,11 @@ public class DataException extends org.apache.thrift.TException implements org.a
       this.date = other.date;
     }
   }
-
+@Override
   public DataException deepCopy() {
     return new DataException(this);
   }
-
+@Override
   public void clear() {
     this.message = null;
     this.callStack = null;
@@ -206,7 +206,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
       this.date = null;
     }
   }
-
+@Override
   public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable Object value) {
     switch (field) {
     case MESSAGE:
@@ -237,6 +237,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
   }
 
   @org.apache.thrift.annotation.Nullable
+  @Override
   public Object getFieldValue(_Fields field) {
     switch (field) {
     case MESSAGE:
@@ -253,6 +254,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
   }
 
   /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+  @Override
   public boolean isSet(_Fields field) {
     if (field == null) {
       throw new IllegalArgumentException();
@@ -333,7 +335,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
     return hashCode;
   }
 
-
+@Override
   public int compareTo(DataException other) {
     if (!getClass().equals(other.getClass())) {
       return getClass().getName().compareTo(other.getClass().getName());
@@ -375,14 +377,15 @@ public class DataException extends org.apache.thrift.TException implements org.a
   }
 
   @org.apache.thrift.annotation.Nullable
+  @Override
   public _Fields fieldForId(int fieldId) {
     return _Fields.findByThriftId(fieldId);
   }
-
+  @Override
   public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
     scheme(iprot).read(iprot, this);
   }
-
+  @Override
   public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
     scheme(oprot).write(oprot, this);
   }
@@ -447,13 +450,14 @@ public class DataException extends org.apache.thrift.TException implements org.a
   }
 
   private static class DataExceptionStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+    @Override
     public DataExceptionStandardScheme getScheme() {
       return new DataExceptionStandardScheme();
     }
   }
 
   private static class DataExceptionStandardScheme extends org.apache.thrift.scheme.StandardScheme<DataException> {
-
+    @Override
     public void read(org.apache.thrift.protocol.TProtocol iprot, DataException struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TField schemeField;
       iprot.readStructBegin();
@@ -498,7 +502,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
       // check for required fields of primitive type, which can't be checked in the validate method
       struct.validate();
     }
-
+    @Override
     public void write(org.apache.thrift.protocol.TProtocol oprot, DataException struct) throws org.apache.thrift.TException {
       struct.validate();
 
@@ -531,6 +535,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
   }
 
   private static class DataExceptionTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+    @Override
     public DataExceptionTupleScheme getScheme() {
       return new DataExceptionTupleScheme();
     }
@@ -538,7 +543,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
 
   private static class DataExceptionTupleScheme extends org.apache.thrift.scheme.TupleScheme<DataException> {
 
-
+    @Override
     public void write(org.apache.thrift.protocol.TProtocol prot, DataException struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
       java.util.BitSet optionals = new java.util.BitSet();
@@ -563,7 +568,7 @@ public class DataException extends org.apache.thrift.TException implements org.a
       }
     }
 
-
+    @Override
     public void read(org.apache.thrift.protocol.TProtocol prot, DataException struct) throws org.apache.thrift.TException {
       org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
       java.util.BitSet incoming = iprot.readBitSet(3);
