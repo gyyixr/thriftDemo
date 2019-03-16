@@ -6,7 +6,7 @@ import thrift.generated.PersonService;
 
 public class PersonServiceImpl implements PersonService.Iface{
 
-
+@Override
     public Person getPersonByUsername(String username) throws DataException, TException {
         System.out.println("Got client Param:" + username);
 
@@ -18,7 +18,7 @@ public class PersonServiceImpl implements PersonService.Iface{
         return person;
     }
 
-
+@Override
     public void savePerson(Person person) throws DataException, TException {
         System.out.println("Got Client Param: ");
 
