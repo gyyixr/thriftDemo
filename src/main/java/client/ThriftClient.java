@@ -21,11 +21,11 @@ public class ThriftClient {
 
             Person person = client.getPersonByUsername("张三");
 
-            System.out.println(person.getUsername());
-            System.out.println(person.getAge());
-            System.out.println(person.isMarried());
+            System.out.println("注册名："+person.getUsername());
+            System.out.println("电话："+person.getAge());
+            System.out.println("注册/登录："+person.isMarried());
 
-            System.out.println("............");
+            //System.out.println("............");
 
             Person person2 = new Person();
 

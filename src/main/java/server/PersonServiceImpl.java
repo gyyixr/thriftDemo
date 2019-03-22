@@ -8,11 +8,11 @@ public class PersonServiceImpl implements PersonService.Iface{
 
 @Override
     public Person getPersonByUsername(String username) throws DataException, TException {
-        System.out.println("Got client Param:" + username);
+        System.out.println("注册名:" + username);
 
         Person person = new Person();
         person.setUsername(username);
-        person.setAge(32);
+        person.setAge(27773888);
         person.setMarried(true);
 
         return person;
@@ -20,10 +20,11 @@ public class PersonServiceImpl implements PersonService.Iface{
 
 @Override
     public void savePerson(Person person) throws DataException, TException {
-        System.out.println("Got Client Param: ");
+    if("张三".equals(person.getUsername())){
+        System.out.println("注册失败！当前用户已存在");
+    }else{
+        System.out.println("注册成功");
 
-        System.out.println(person.getUsername());
-        System.out.println(person.getAge());
-        System.out.println(person.isMarried());
+    }
     }
 }
